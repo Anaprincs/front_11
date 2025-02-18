@@ -12,6 +12,6 @@ class Tarefa extends Model
     protected $fillable = [
         'nome',
         'data_hora',
-        'decricao'
+        'descricao'
     ];
 }
