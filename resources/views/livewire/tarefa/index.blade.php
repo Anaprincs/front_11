@@ -25,7 +25,8 @@
                                 <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
                                     data-bs-target="#editModal">Editar</button>
 
-                                <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">Excluir</button>
+                                <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                 wire:click="abrirModalExclusao({{$t->id}})">Excluir</button>
                             </td>
                     </tr>
                     @endforeach
@@ -48,7 +49,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-danger" wire:click="excluir">Excluir</button>
                 </div>
             </div>
         </div>

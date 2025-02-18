@@ -8,6 +8,7 @@ use Livewire\Component;
 class Index extends Component
 
 {
+    public $tarefaId;
     public $nome;
     public $data_hora;
     public $descricao;
@@ -27,6 +28,14 @@ class Index extends Component
             $this->nome = $tarefa->nome;
             $this->data_hora = $tarefa->data_hora;
             $this->descricao = $tarefa->descricao;
+        }
+    }public function abrirModalExclusao($tarefaId){
+        $this->tarefaId = $tarefaId;
+    }
+
+    public function excluir(){
+        if($this->tarefaId){
+            Tarefa::find($this->tarefaId)->delete();
         }
     }
 }
